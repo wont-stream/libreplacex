@@ -1,6 +1,6 @@
 const replaceURL = (
   secure = true,
-  librex = "librex.me",
+  librex = "lx.vern.cc",
   port = "",
   searchURL
 ) => {
@@ -87,12 +87,7 @@ const replaceURL = (
 
       break;
     default:
-      q =
-        url.searchParams.get("q") ||
-        url.searchParams.get("search") ||
-        url.searchParams.get("text") ||
-        url.searchParams.get("p");
-      break;
+      return;
   }
 
   const newURL = new URL(`${secure ? "https" : "http"}://${librex}`);
@@ -104,7 +99,7 @@ const replaceURL = (
 };
 
 // CommonJS export (Node.js)
-if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+if (typeof module !== "undefined" && typeof module.exports !== "undefined") {a
   module.exports = replaceURL;
 }
 
